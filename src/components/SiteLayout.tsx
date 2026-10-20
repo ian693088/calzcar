@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import urusLogo from "@/assets/hero-urus.jpg";
 import capturedCSS from "../styles/site.css?inline";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -8,14 +9,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <header className="border-ink-100 backdrop-blur-md bg-[#ffffffe6] border-b border-[rgb(236_238_242/var(--tw-border-opacity,1))] sticky top-0 z-50 [backdrop-filter:var(--tw-backdrop-blur)]">
               <div className="items-center flex h-16 justify-between ml-auto mr-auto max-w-7xl w-full py-0 px-4 md:py-0 md:px-6 xl:py-0 xl:px-8">
                 <a className="items-center flex gap-2.5 text-site-import-foreground [text-decoration:inherit]" href="/">
-                  <span className="from-brand-500 to-brand-700 text-white shadow-md items-center rounded-[0.75rem] shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] text-[rgb(255_255_255/1)] inline-flex h-9 justify-center relative w-9 [background-image:linear-gradient(to_bottom_right,var(--tw-gradient-stops))]">
-                    <svg className="block h-5 align-middle w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11" />
-                      <path d="M3 11h18v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
-                      <circle cx="7.5" cy="14.5" r="1" />
-                      <circle cx="16.5" cy="14.5" r="1" />
-                    </svg>
-                  </span>
+                  <img src={urusLogo} alt="Calzcar AutoHub" className="h-10 w-16 rounded-lg object-cover shadow-md" />
                   <span className="text-ink-900 text-site-import-foreground font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold tracking-tight leading-7">Calzcar<span className="text-brand-500 text-[rgb(47_123_255/1)]">AutoHub</span></span>
                 </a>
                 <nav className="items-center gap-1 hidden md:flex">
@@ -43,14 +37,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 <div>
                   <div className={"[&_*]:!text-white"}>
                     <a className="items-center text-[rgb(255_255_255/1)]! flex gap-2.5 [text-decoration:inherit]" href="/">
-                      <span className="from-brand-500 to-brand-700 text-white shadow-md items-center rounded-[0.75rem] shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] text-[rgb(255_255_255/1)]! inline-flex h-9 justify-center relative w-9 [background-image:linear-gradient(to_bottom_right,var(--tw-gradient-stops))]">
-                        <svg className="text-[rgb(255_255_255/1)]! block h-5 align-middle w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                          <path className="text-[rgb(255_255_255/1)]!" d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11" />
-                          <path className="text-[rgb(255_255_255/1)]!" d="M3 11h18v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
-                          <circle className="text-[rgb(255_255_255/1)]!" cx="7.5" cy="14.5" r="1" />
-                          <circle className="text-[rgb(255_255_255/1)]!" cx="16.5" cy="14.5" r="1" />
-                        </svg>
-                      </span>
+                      <img src={urusLogo} alt="Calzcar AutoHub" className="h-10 w-16 rounded-lg object-cover shadow-md" />
                       <span className="text-white text-[rgb(255_255_255/1)]! font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold tracking-tight leading-7">Calzcar<span className="text-brand-500 text-[rgb(255_255_255/1)]!">AutoHub</span></span>
                     </a>
                   </div>
