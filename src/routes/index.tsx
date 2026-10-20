@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { FeaturedCars } from "@/components/CarCard";
+import heroUrus from "@/assets/hero-urus.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -19,7 +21,7 @@ function Index() {
               <div className="opacity-100 [animation:0.4s_ease-out_0s_1_normal_both_running_fadeIn]">
                 <section className="bg-ink-950 text-white bg-[rgb(19_22_31/1)] text-[rgb(255_255_255/1)] overflow-hidden relative">
                   <div className="inset-0 absolute">
-                    <img className="block h-full max-w-full object-cover opacity-40 align-middle w-full" src="/site-assets/78a22f83d50f74e9.avif" alt="" />
+                    <img className="block h-full max-w-full object-cover opacity-60 align-middle w-full" src={heroUrus} alt="Lamborghini Urus at Calzcar AutoHub" width={1920} height={1088} />
                     <div className="from-ink-950 via-ink-950/85 to-ink-950/40 inset-0 absolute [background-image:linear-gradient(to_right,var(--tw-gradient-stops))]" />
                   </div>
                   <div className="items-center grid grid-cols-1 ml-auto mr-auto max-w-7xl min-h-[88vh] relative w-full z-10 py-20 px-4 md:py-20 md:px-6 xl:py-28 xl:px-8">
@@ -118,136 +120,7 @@ function Index() {
                       </div>
                       <a className="text-brand-600 hover:text-brand-700 items-center text-site-import-primary text-[0.875rem] font-semibold gap-1 leading-5 hidden [text-decoration:inherit] hover:text-[rgb(22_73_180/1)] md:flex" href="/inventory">View all <svg className="block h-4 align-middle w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
                     </div>
-                    <div className="grid gap-6 grid-cols-1 mt-10 lg:grid-cols-3 sm:grid-cols-2">
-                      <a className="group card hover:-translate-y-1 hover:shadow-cardHover bg-[rgb(255_255_255/1)] border-[rgb(236_238_242/var(--tw-border-opacity,1))] rounded-[1rem]! border! shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] overflow-hidden duration-300 transition-all ease-[cubic-bezier(0.4,0,0.2,1)] text-site-import-foreground [text-decoration:inherit] hover:shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] hover:transform-[translate(0,var(--tw-translate-y))_rotate(0)_skew(0)_skewY(0)_scaleX(var(--tw-scale-x))_scaleY(var(--tw-scale-y))]" href="/car/07652ee3-d1fd-41ed-a51d-efc075ede87f">
-                        <div className="bg-ink-100 aspect-[16/10] bg-site-import-border overflow-hidden relative">
-                          <img className="group-hover:scale-105 block h-full max-w-full object-cover duration-500 transition-transform ease-[cubic-bezier(0.4,0,0.2,1)] align-middle w-full" src="/site-assets/78a22f83d50f74e9.avif" alt="Toyota RAV4 Hybrid" {...({ loading: "lazy" } as any)} />
-                          <div className="flex gap-2 left-3 absolute top-3">
-                            <span className="bg-brand-600 text-white items-center bg-site-import-primary rounded-[9999px] text-[rgb(255_255_255/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">New Cars</span>
-                          </div>
-                          <div className="absolute right-3 top-3">
-                            <span className="text-success-700 items-center bg-[#10b9811a] rounded-[9999px] text-[rgb(4_120_87/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">available</span>
-                          </div>
-                        </div>
-                        <div className="p-5">
-                          <div className="items-start flex gap-3 justify-between">
-                            <div>
-                              <h3 className="text-ink-900 text-site-import-foreground font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-bold leading-tight m-0">Toyota RAV4 Hybrid</h3>
-                              <p className="text-ink-500 text-[rgb(102_115_144/1)] text-[0.875rem] leading-5 m-0 mt-0.5!">2024 · SUV</p>
-                            </div>
-                            <div className="text-right">
-                              <p className="text-brand-700 text-[rgb(22_73_180/1)] font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold leading-7 m-0">$41,200</p>
-                            </div>
-                          </div>
-                          <div className="text-ink-600 text-[rgb(81_92_118/1)] grid text-[0.75rem] gap-2 grid-cols-2 leading-4 mt-4">
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M8 2v4" /><path d="M16 2v4" /><rect x="3" y="4" rx="2" {...({ width: "18", height: "18" } as any)} /><path d="M3 10h18" /></svg> 2024</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="m12 14 4-4" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /></svg> 0 km</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M20 7h-9" /><path d="M14 17H5" /><circle cx="17" cy="17" r="3" /><circle cx="7" cy="7" r="3" /></svg> Automatic</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><line x1="3" x2="15" y1="22" y2="22" /><line x1="4" x2="14" y1="9" y2="9" /><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18" /><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5" /></svg> Hybrid</span>
-                          </div>
-                          <div className="border-ink-100 items-center border-[rgb(236_238_242/var(--tw-border-opacity,1))] border-t flex justify-between mt-4 pt-3">
-                            <span className="text-ink-500 items-center text-[rgb(102_115_144/1)] inline-flex text-[0.75rem] font-medium gap-1 leading-4"><svg className="text-success-500 text-site-import-accent block h-4 align-middle w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m9 12 2 2 4-4" /></svg> New</span>
-                            <span className="text-brand-600 group-hover:text-brand-700 text-site-import-primary text-[0.875rem] font-semibold leading-5">View details →</span>
-                          </div>
-                        </div>
-                      </a>
-                      <a className="group card hover:-translate-y-1 hover:shadow-cardHover bg-[rgb(255_255_255/1)] border-[rgb(236_238_242/var(--tw-border-opacity,1))] rounded-[1rem]! border! shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] overflow-hidden duration-300 transition-all ease-[cubic-bezier(0.4,0,0.2,1)] text-site-import-foreground [text-decoration:inherit] hover:shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] hover:transform-[translate(0,var(--tw-translate-y))_rotate(0)_skew(0)_skewY(0)_scaleX(var(--tw-scale-x))_scaleY(var(--tw-scale-y))]" href="/car/bd5633e2-d538-48ed-913d-48efbb0a0bd2">
-                        <div className="bg-ink-100 aspect-[16/10] bg-site-import-border overflow-hidden relative">
-                          <img className="group-hover:scale-105 block h-full max-w-full object-cover duration-500 transition-transform ease-[cubic-bezier(0.4,0,0.2,1)] align-middle w-full" src="/site-assets/56743c6ac4f5a0ec.avif" alt="Ford Ranger Raptor" {...({ loading: "lazy" } as any)} />
-                          <div className="flex gap-2 left-3 absolute top-3">
-                            <span className="bg-ink-800 text-white items-center bg-[rgb(57_64_81/1)] rounded-[9999px] text-[rgb(255_255_255/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">Second-Hand</span>
-                          </div>
-                          <div className="absolute right-3 top-3">
-                            <span className="text-success-700 items-center bg-[#10b9811a] rounded-[9999px] text-[rgb(4_120_87/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">available</span>
-                          </div>
-                        </div>
-                        <div className="p-5">
-                          <div className="items-start flex gap-3 justify-between">
-                            <div>
-                              <h3 className="text-ink-900 text-site-import-foreground font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-bold leading-tight m-0">Ford Ranger Raptor</h3>
-                              <p className="text-ink-500 text-[rgb(102_115_144/1)] text-[0.875rem] leading-5 m-0 mt-0.5!">2022 · Pickup</p>
-                            </div>
-                            <div className="text-right">
-                              <p className="text-brand-700 text-[rgb(22_73_180/1)] font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold leading-7 m-0">$38,900</p>
-                            </div>
-                          </div>
-                          <div className="text-ink-600 text-[rgb(81_92_118/1)] grid text-[0.75rem] gap-2 grid-cols-2 leading-4 mt-4">
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M8 2v4" /><path d="M16 2v4" /><rect x="3" y="4" rx="2" {...({ width: "18", height: "18" } as any)} /><path d="M3 10h18" /></svg> 2022</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="m12 14 4-4" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /></svg> 18,500 km</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M20 7h-9" /><path d="M14 17H5" /><circle cx="17" cy="17" r="3" /><circle cx="7" cy="7" r="3" /></svg> Automatic</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><line x1="3" x2="15" y1="22" y2="22" /><line x1="4" x2="14" y1="9" y2="9" /><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18" /><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5" /></svg> Petrol</span>
-                          </div>
-                          <div className="border-ink-100 items-center border-[rgb(236_238_242/var(--tw-border-opacity,1))] border-t flex justify-between mt-4 pt-3">
-                            <span className="text-ink-500 items-center text-[rgb(102_115_144/1)] inline-flex text-[0.75rem] font-medium gap-1 leading-4"><svg className="text-success-500 text-site-import-accent block h-4 align-middle w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m9 12 2 2 4-4" /></svg> Excellent</span>
-                            <span className="text-brand-600 group-hover:text-brand-700 text-site-import-primary text-[0.875rem] font-semibold leading-5">View details →</span>
-                          </div>
-                        </div>
-                      </a>
-                      <a className="group card hover:-translate-y-1 hover:shadow-cardHover bg-[rgb(255_255_255/1)] border-[rgb(236_238_242/var(--tw-border-opacity,1))] rounded-[1rem]! border! shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] overflow-hidden duration-300 transition-all ease-[cubic-bezier(0.4,0,0.2,1)] text-site-import-foreground [text-decoration:inherit] hover:shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] hover:transform-[translate(0,var(--tw-translate-y))_rotate(0)_skew(0)_skewY(0)_scaleX(var(--tw-scale-x))_scaleY(var(--tw-scale-y))]" href="/car/9c3903f0-356b-4946-a2f8-205a8c5ab029">
-                        <div className="bg-ink-100 aspect-[16/10] bg-site-import-border overflow-hidden relative">
-                          <img className="group-hover:scale-105 block h-full max-w-full object-cover duration-500 transition-transform ease-[cubic-bezier(0.4,0,0.2,1)] align-middle w-full" src="/site-assets/15ee65c2556a20ca.avif" alt="Mercedes-Benz E-Class 350" {...({ loading: "lazy" } as any)} />
-                          <div className="flex gap-2 left-3 absolute top-3">
-                            <span className="bg-brand-600 text-white items-center bg-site-import-primary rounded-[9999px] text-[rgb(255_255_255/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">New Cars</span>
-                          </div>
-                          <div className="absolute right-3 top-3">
-                            <span className="text-success-700 items-center bg-[#10b9811a] rounded-[9999px] text-[rgb(4_120_87/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">available</span>
-                          </div>
-                        </div>
-                        <div className="p-5">
-                          <div className="items-start flex gap-3 justify-between">
-                            <div>
-                              <h3 className="text-ink-900 text-site-import-foreground font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-bold leading-tight m-0">Mercedes-Benz E-Class 350</h3>
-                              <p className="text-ink-500 text-[rgb(102_115_144/1)] text-[0.875rem] leading-5 m-0 mt-0.5!">2024 · Sedan</p>
-                            </div>
-                            <div className="text-right">
-                              <p className="text-brand-700 text-[rgb(22_73_180/1)] font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold leading-7 m-0">$58,500</p>
-                            </div>
-                          </div>
-                          <div className="text-ink-600 text-[rgb(81_92_118/1)] grid text-[0.75rem] gap-2 grid-cols-2 leading-4 mt-4">
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M8 2v4" /><path d="M16 2v4" /><rect x="3" y="4" rx="2" {...({ width: "18", height: "18" } as any)} /><path d="M3 10h18" /></svg> 2024</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="m12 14 4-4" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /></svg> 0 km</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M20 7h-9" /><path d="M14 17H5" /><circle cx="17" cy="17" r="3" /><circle cx="7" cy="7" r="3" /></svg> Automatic</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><line x1="3" x2="15" y1="22" y2="22" /><line x1="4" x2="14" y1="9" y2="9" /><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18" /><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5" /></svg> Petrol</span>
-                          </div>
-                          <div className="border-ink-100 items-center border-[rgb(236_238_242/var(--tw-border-opacity,1))] border-t flex justify-between mt-4 pt-3">
-                            <span className="text-ink-500 items-center text-[rgb(102_115_144/1)] inline-flex text-[0.75rem] font-medium gap-1 leading-4"><svg className="text-success-500 text-site-import-accent block h-4 align-middle w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m9 12 2 2 4-4" /></svg> New</span>
-                            <span className="text-brand-600 group-hover:text-brand-700 text-site-import-primary text-[0.875rem] font-semibold leading-5">View details →</span>
-                          </div>
-                        </div>
-                      </a>
-                      <a className="group card hover:-translate-y-1 hover:shadow-cardHover bg-[rgb(255_255_255/1)] border-[rgb(236_238_242/var(--tw-border-opacity,1))] rounded-[1rem]! border! shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] overflow-hidden duration-300 transition-all ease-[cubic-bezier(0.4,0,0.2,1)] text-site-import-foreground [text-decoration:inherit] hover:shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] hover:transform-[translate(0,var(--tw-translate-y))_rotate(0)_skew(0)_skewY(0)_scaleX(var(--tw-scale-x))_scaleY(var(--tw-scale-y))]" href="/car/239b68e4-6451-4901-acc6-78f56ccd11ed">
-                        <div className="bg-ink-100 aspect-[16/10] bg-site-import-border overflow-hidden relative">
-                          <img className="group-hover:scale-105 block h-full max-w-full object-cover duration-500 transition-transform ease-[cubic-bezier(0.4,0,0.2,1)] align-middle w-full" src="/site-assets/131a8c82e95ebd08.avif" alt="BMW M4 Competition" {...({ loading: "lazy" } as any)} />
-                          <div className="flex gap-2 left-3 absolute top-3">
-                            <span className="bg-accent-500 text-white items-center bg-[rgb(255_122_18/1)] rounded-[9999px] text-[rgb(255_255_255/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">Imports</span>
-                          </div>
-                          <div className="absolute right-3 top-3">
-                            <span className="text-success-700 items-center bg-[#10b9811a] rounded-[9999px] text-[rgb(4_120_87/1)] inline-flex text-[0.75rem] font-semibold gap-1 leading-4 py-0.5 px-2.5">available</span>
-                          </div>
-                        </div>
-                        <div className="p-5">
-                          <div className="items-start flex gap-3 justify-between">
-                            <div>
-                              <h3 className="text-ink-900 text-site-import-foreground font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-bold leading-tight m-0">BMW M4 Competition</h3>
-                              <p className="text-ink-500 text-[rgb(102_115_144/1)] text-[0.875rem] leading-5 m-0 mt-0.5!">2023 · Coupe</p>
-                            </div>
-                            <div className="text-right">
-                              <p className="text-brand-700 text-[rgb(22_73_180/1)] font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold leading-7 m-0">$89,750</p>
-                            </div>
-                          </div>
-                          <div className="text-ink-600 text-[rgb(81_92_118/1)] grid text-[0.75rem] gap-2 grid-cols-2 leading-4 mt-4">
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M8 2v4" /><path d="M16 2v4" /><rect x="3" y="4" rx="2" {...({ width: "18", height: "18" } as any)} /><path d="M3 10h18" /></svg> 2023</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="m12 14 4-4" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /></svg> 5,200 km</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M20 7h-9" /><path d="M14 17H5" /><circle cx="17" cy="17" r="3" /><circle cx="7" cy="7" r="3" /></svg> Automatic</span>
-                            <span className="items-center inline-flex gap-1.5"><svg className="text-ink-400 text-site-import-muted-foreground block h-3.5 align-middle w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><line x1="3" x2="15" y1="22" y2="22" /><line x1="4" x2="14" y1="9" y2="9" /><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18" /><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5" /></svg> Petrol</span>
-                          </div>
-                          <div className="border-ink-100 items-center border-[rgb(236_238_242/var(--tw-border-opacity,1))] border-t flex justify-between mt-4 pt-3">
-                            <span className="text-ink-500 items-center text-[rgb(102_115_144/1)] inline-flex text-[0.75rem] font-medium gap-1 leading-4"><svg className="text-success-500 text-site-import-accent block h-4 align-middle w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m9 12 2 2 4-4" /></svg> New</span>
-                            <span className="text-brand-600 group-hover:text-brand-700 text-site-import-primary text-[0.875rem] font-semibold leading-5">View details →</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
+                    <FeaturedCars />
                   </div>
                 </section>
                 <section className="ml-auto mr-auto max-w-7xl w-full py-20 px-4 md:py-20 md:px-6 xl:py-20 xl:px-8">
