@@ -1,8 +1,9 @@
-import type { CSSProperties, ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import logoAsset from "@/assets/calzcar-logo.png.asset.json";
 import capturedCSS from "../styles/site.css?inline";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (<><style>{capturedCSS.replace(/(<\/|<)(s)(tyle)/gi, (_, prefix, letter, rest) => prefix + (letter === "s" ? "\\73 " : "\\53 ") + rest)}</style>
       <div className="bg-site-import-background text-site-import-foreground selection:bg-[#2f7bff33]! selection:text-[rgb(23_58_115/1)]">
           <div className="flex flex-col min-h-screen">
@@ -22,7 +23,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 <div className="items-center gap-2 hidden md:flex">
                   <a className="btn-primary items-center bg-site-import-primary rounded-[0.5rem] shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] text-[rgb(255_255_255/1)] text-[0.875rem] font-semibold gap-2 justify-center leading-5 py-2.5 px-5 duration-200 transition-all ease-[cubic-bezier(0.4,0,0.2,1)] inline-flex [text-decoration:inherit] active:bg-[rgb(23_63_144/1)] disabled:opacity-50 disabled:pointer-events-none focus-visible:shadow-[var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0_0_#0000)] focus:outline-transparent focus:outline-solid focus:outline-2 focus:outline-offset-2 hover:bg-[rgb(22_73_180/1)] hover:shadow-[var(--tw-ring-offset-shadow,0_0_#0000),var(--tw-ring-shadow,0_0_#0000),var(--tw-shadow)] md:flex" href="/admin/login"><svg className="block h-4 align-middle w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg> Admin</a>
                 </div>
-                <button className="text-ink-700 hover:bg-ink-100 items-center bg-none rounded-[0.5rem] text-[rgb(66_75_96/1)] cursor-pointer text-[100%] justify-center m-0 p-2 normal-case bg-transparent flex [appearance:button] [font-family:inherit] [font-feature-settings:inherit] [font-variation-settings:inherit] [font-weight:inherit] [letter-spacing:inherit] [line-height:inherit] hover:bg-site-import-border md:hidden" aria-label="Toggle menu">
+                <button aria-label="Open menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)} className="text-ink-700 hover:bg-ink-100 items-center bg-none rounded-[0.5rem] text-[rgb(66_75_96/1)] cursor-pointer text-[100%] justify-center m-0 p-2 normal-case bg-transparent flex [appearance:button] [font-family:inherit] [font-feature-settings:inherit] [font-variation-settings:inherit] [font-weight:inherit] [letter-spacing:inherit] [line-height:inherit] hover:bg-site-import-border md:hidden" aria-label="Toggle menu">
                   <svg className="block h-5 align-middle w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...({ xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24" } as any)}>
                     <line x1="4" x2="20" y1="12" y2="12" />
                     <line x1="4" x2="20" y1="6" y2="6" />
@@ -30,6 +31,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                   </svg>
                 </button>
               </div>
+              {menuOpen && (
+                <nav className="flex flex-col gap-1 border-t border-site-import-border bg-background px-4 py-3 md:hidden">
+                  {[["/", "Home"], ["/inventory", "Inventory"], ["/services", "Services"], ["/about", "About"], ["/contact", "Contact"], ["/admin/login", "Admin"]].map(([href, label]) => (
+                    <a key={href} href={href} onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-site-import-foreground hover:bg-site-import-border">{label}</a>
+                  ))}
+                </nav>
+              )}
             </header>
             <main className="flex-1">{children}</main>
             <footer className="border-ink-800 bg-ink-950 text-ink-300 bg-[rgb(19_22_31/1)] border-[rgb(57_64_81/var(--tw-border-opacity,1))] border-t text-[rgb(176_184_200/1)] mt-24">
