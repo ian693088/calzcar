@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
-import urusLogo from "@/assets/hero-urus.jpg";
+import logoAsset from "@/assets/calzcar-logo.png.asset.json";
 import capturedCSS from "../styles/site.css?inline";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -9,7 +9,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <header className="border-ink-100 backdrop-blur-md bg-[#ffffffe6] border-b border-[rgb(236_238_242/var(--tw-border-opacity,1))] sticky top-0 z-50 [backdrop-filter:var(--tw-backdrop-blur)]">
               <div className="items-center flex h-16 justify-between ml-auto mr-auto max-w-7xl w-full py-0 px-4 md:py-0 md:px-6 xl:py-0 xl:px-8">
                 <a className="items-center flex gap-2.5 text-site-import-foreground [text-decoration:inherit]" href="/">
-                  <img src={urusLogo} alt="Calzcar AutoHub" className="h-10 w-16 rounded-lg object-cover shadow-md" />
+                  <img src={logoAsset.url} alt="Calzcar AutoHub logo" className="h-11 w-11 rounded-lg object-cover shadow-md" />
                   <span className="text-ink-900 text-site-import-foreground font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold tracking-tight leading-7">Calzcar<span className="text-brand-500 text-[rgb(47_123_255/1)]">AutoHub</span></span>
                 </a>
                 <nav className="items-center gap-1 hidden md:flex">
@@ -37,7 +37,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 <div>
                   <div className={"[&_*]:!text-white"}>
                     <a className="items-center text-[rgb(255_255_255/1)]! flex gap-2.5 [text-decoration:inherit]" href="/">
-                      <img src={urusLogo} alt="Calzcar AutoHub" className="h-10 w-16 rounded-lg object-cover shadow-md" />
+                      <img src={logoAsset.url} alt="Calzcar AutoHub logo" className="h-11 w-11 rounded-lg object-cover shadow-md" />
                       <span className="text-white text-[rgb(255_255_255/1)]! font-[family-name:Sora,Inter,ui-sans-serif,system-ui,sans-serif] text-[1.125rem] font-extrabold tracking-tight leading-7">Calzcar<span className="text-brand-500 text-[rgb(255_255_255/1)]!">AutoHub</span></span>
                     </a>
                   </div>
