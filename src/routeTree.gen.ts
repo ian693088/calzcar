@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as InventoryRouteImport } from './routes/inventory'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as CarIdRouteImport } from './routes/car.$id'
@@ -26,6 +28,11 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -34,6 +41,11 @@ const ContactRoute = ContactRouteImport.update({
 const InventoryRoute = InventoryRouteImport.update({
   id: '/inventory',
   path: '/inventory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -54,16 +66,20 @@ const CarIdRoute = CarIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/inventory': typeof InventoryRoute
+  '/services': typeof ServicesRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/admin/login': typeof AdminLoginRoute
   '/car/$id': typeof CarIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/inventory': typeof InventoryRoute
+  '/services': typeof ServicesRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/admin/login': typeof AdminLoginRoute
   '/car/$id': typeof CarIdRoute
@@ -72,8 +88,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/inventory': typeof InventoryRoute
+  '/services': typeof ServicesRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/admin/login': typeof AdminLoginRoute
   '/car/$id': typeof CarIdRoute
@@ -81,15 +99,32 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/contact' | '/inventory' | '/admin' | '/admin/login' | '/car/$id'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/inventory'
+    | '/services'
+    | '/admin'
+    | '/admin/login'
+    | '/car/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/inventory' | '/admin' | '/admin/login' | '/car/$id'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/inventory'
+    | '/services'
+    | '/admin'
+    | '/admin/login'
+    | '/car/$id'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/about'
     | '/contact'
     | '/inventory'
+    | '/services'
     | '/_authenticated/admin'
     | '/admin/login'
     | '/car/$id'
@@ -98,8 +133,10 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   InventoryRoute: typeof InventoryRoute
+  ServicesRoute: typeof ServicesRoute
   AdminLoginRoute: typeof AdminLoginRoute
   CarIdRoute: typeof CarIdRoute
 }
@@ -120,6 +157,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -132,6 +176,13 @@ declare module '@tanstack/react-router' {
       path: '/inventory'
       fullPath: '/inventory'
       preLoaderRoute: typeof InventoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -172,8 +223,10 @@ const AuthenticatedRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   InventoryRoute: InventoryRoute,
+  ServicesRoute: ServicesRoute,
   AdminLoginRoute: AdminLoginRoute,
   CarIdRoute: CarIdRoute,
 }
